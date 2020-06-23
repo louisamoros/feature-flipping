@@ -1,5 +1,7 @@
-package com.example.servicea;
+package com.example.servicea.api;
 
+import com.example.servicea.config.MarketFlippingStrategy;
+import org.ff4j.core.FlippingExecutionContext;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,18 @@ public class HomeController {
                        @PathVariable("country") String country) {
         return new Payload(
                 apiService.whichApi(),
+                brand,
+                country
+        );
+    }
+
+    @GetMapping("/hey/market")
+    public Payload heyOnMarket(@PathVariable("brand") String brand,
+                       @PathVariable("country") String country) {
+        FlippingExecutionContext executionContext = new FlippingExecutionContext();
+        executionContext.putString(MarketFlippingStrategy.PARAM_NAME_USER_MARKET, brand + "-" + country);
+        return new Payload(
+                apiService.whichApiOnMarket(executionContext),
                 brand,
                 country
         );

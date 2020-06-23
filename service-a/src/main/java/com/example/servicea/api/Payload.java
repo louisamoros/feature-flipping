@@ -1,4 +1,4 @@
-package com.example.servicea;
+package com.example.servicea.api;
 
 class Payload {
 

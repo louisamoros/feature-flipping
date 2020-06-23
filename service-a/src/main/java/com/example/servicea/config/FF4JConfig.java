@@ -1,4 +1,4 @@
-package com.example.servicea;
+package com.example.servicea.config;
 
 import org.ff4j.FF4j;
 import org.ff4j.redis.RedisConnection;
@@ -6,14 +6,9 @@ import org.ff4j.store.EventRepositoryRedis;
 import org.ff4j.store.FeatureStoreRedis;
 import org.ff4j.store.PropertyStoreRedis;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan({
-        "org.ff4j.aop",
-        "com.example.servicea"
-})
 public class FF4JConfig {
 
     @Bean

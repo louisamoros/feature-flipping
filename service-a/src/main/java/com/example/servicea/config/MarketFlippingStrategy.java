@@ -1,4 +1,4 @@
-package com.example.adminconsole.config;
+package com.example.servicea.config;
 
 import org.ff4j.core.FeatureStore;
 import org.ff4j.core.FlippingExecutionContext;

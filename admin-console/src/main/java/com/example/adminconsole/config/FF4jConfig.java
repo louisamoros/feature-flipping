@@ -1,7 +1,6 @@
 package com.example.adminconsole.config;
 
 import org.ff4j.FF4j;
-import org.ff4j.core.FlippingStrategy;
 import org.ff4j.redis.RedisConnection;
 import org.ff4j.store.EventRepositoryRedis;
 import org.ff4j.store.FeatureStoreRedis;
@@ -39,11 +38,6 @@ public class FF4jConfig {
         //ff4j.cache([a cache Manager]);
 
         return ff4j;
-    }
-
-    @Bean
-    public FlippingStrategy regionFlippingStrategy() {
-        return new MarketFlippingStrategy();
     }
 
 }

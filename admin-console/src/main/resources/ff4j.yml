@@ -1,0 +1,20 @@
+ff4j:
+  autocreate: true
+  audit: true
+  features:
+    - uid: new-api-release-date
+      enable: true
+      flipstrategy:
+        class: org.ff4j.strategy.time.ReleaseDateFlipStrategy
+        param:
+          - name: releaseDate
+            value: 2013-07-14-14:00
+    - uid: new-api
+      enable: true
+    - uid: new-api-market
+      enable: true
+      flipstrategy:
+        class: com.example.adminconsole.config.MarketFlippingStrategy
+        param:
+          - name: grantedMarkets
+            value: uk-coke,uk-pepsi
