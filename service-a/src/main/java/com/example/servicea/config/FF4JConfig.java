@@ -36,7 +36,6 @@ public class FF4JConfig {
 
         // To define a cacher layer to relax the DB, multiple implementations
         //ff4j.cache([a cache Manager]);
-
         return ff4j;
     }
 

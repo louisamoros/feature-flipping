@@ -22,6 +22,7 @@
     <modules>
         <module>admin-console</module>
         <module>service-a</module>
+        <module>flipping-util</module>
     </modules>
 
     <build>

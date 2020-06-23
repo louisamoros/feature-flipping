@@ -1,4 +1,4 @@
-package com.example.servicea.config;
+package com.example.flippingutil;
 
 import org.ff4j.core.FeatureStore;
 import org.ff4j.core.FlippingExecutionContext;

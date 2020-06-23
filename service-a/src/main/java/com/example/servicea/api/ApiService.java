@@ -1,6 +1,6 @@
 package com.example.servicea.api;
 
-import com.example.servicea.config.MarketFlippingStrategy;
+import com.example.flippingutil.MarketFlippingStrategy;
 import org.ff4j.aop.ContextLocation;
 import org.ff4j.aop.Flip;
 import org.ff4j.core.FlippingExecutionContext;

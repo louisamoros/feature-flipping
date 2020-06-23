@@ -14,7 +14,7 @@ ff4j:
     - uid: new-api-market
       enable: true
       flipstrategy:
-        class: com.example.adminconsole.config.MarketFlippingStrategy
+        class: com.example.flippingutil.MarketFlippingStrategy
         param:
           - name: grantedMarkets
             value: uk-coke,uk-pepsi

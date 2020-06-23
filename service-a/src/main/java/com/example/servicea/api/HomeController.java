@@ -1,6 +1,6 @@
 package com.example.servicea.api;
 
-import com.example.servicea.config.MarketFlippingStrategy;
+import com.example.flippingutil.MarketFlippingStrategy;
 import org.ff4j.core.FlippingExecutionContext;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
