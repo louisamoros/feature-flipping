@@ -1,4 +1,4 @@
-package com.example.servicea.config;
+package com.example.servicea;
 
 class Payload {
 

@@ -1,0 +1,26 @@
+ff4j: 
+  autocreate: true
+  audit: true
+  features: 
+    - uid: new-api-release-date
+      enable: true
+      flipstrategy: 
+        class: org.ff4j.strategy.time.ReleaseDateFlipStrategy
+        param: 
+          - name: releaseDate
+            value: 2013-07-14-14:00
+    - uid: new-api
+      enable: true
+  properties: 
+    - name: United Kingdom
+      type: org.ff4j.property.PropertyString
+      value: uk
+    - name: Pepsi
+      type: org.ff4j.property.PropertyString
+      value: pepsi
+    - name: France
+      type: org.ff4j.property.PropertyString
+      value: fr
+    - name: Coca
+      type: org.ff4j.property.PropertyString
+      value: coca

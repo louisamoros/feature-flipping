@@ -37,7 +37,6 @@ public class FF4jConfig {
 
         // To define a cacher layer to relax the DB, multiple implementations
         //ff4j.cache([a cache Manager]);
-        ff4j.getFeature("legacy-api").setFlippingStrategy(regionFlippingStrategy());
 
         return ff4j;
     }
