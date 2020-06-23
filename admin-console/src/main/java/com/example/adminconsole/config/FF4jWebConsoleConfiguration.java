@@ -1,4 +1,4 @@
-package com.example.featureflipping.config;
+package com.example.adminconsole.config;
 
 import org.ff4j.FF4j;
 import org.ff4j.spring.boot.web.api.config.EnableFF4jSwagger;

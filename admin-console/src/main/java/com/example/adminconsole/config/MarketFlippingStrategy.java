@@ -1,4 +1,4 @@
-package com.example.featureflipping.config;
+package com.example.adminconsole.config;
 
 import org.ff4j.core.FeatureStore;
 import org.ff4j.core.FlippingExecutionContext;

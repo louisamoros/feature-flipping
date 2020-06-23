@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<features>
-    <feature uid="legacy-api" enable="true" >
-        <flipstrategy class="com.example.featureflipping.config.MarketFlippingStrategy" >
-            <param name="grantedRegions">ASIA,AMER</param>
-        </flipstrategy>
-    </feature>
-</features>
