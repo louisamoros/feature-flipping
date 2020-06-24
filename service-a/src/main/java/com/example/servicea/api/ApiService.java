@@ -13,7 +13,6 @@ interface ApiService {
     @Flip(
             name = "new-api-market",
             alterBean = "new-service-api",
-            flippingStrategy = MarketFlippingStrategy.class,
             contextLocation = ContextLocation.PARAMETER
     )
     String whichApiOnMarket(FlippingExecutionContext context);
