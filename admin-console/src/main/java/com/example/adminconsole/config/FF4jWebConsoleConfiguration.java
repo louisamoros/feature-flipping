@@ -19,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 // The class should be on classpath : FF4jDispatcherServlet
 @ConditionalOnClass({FF4jDispatcherServlet.class})
 // Setup FF4j first, not is required
-@AutoConfigureAfter(FF4jConfig.class)
+@AutoConfigureAfter(FF4JConfiguration.class)
 public class FF4jWebConsoleConfiguration extends SpringBootServletInitializer implements WebMvcConfigurer {
     /**
      * Definition of the servlet for web console

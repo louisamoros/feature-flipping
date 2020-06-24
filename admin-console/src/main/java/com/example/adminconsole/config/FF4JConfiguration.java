@@ -9,13 +9,22 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class FF4jConfig {
+public class FF4JConfiguration {
+
+    private final RedisConfiguration redisConfiguration;
+
+    public FF4JConfiguration(RedisConfiguration redisConfiguration) {
+        this.redisConfiguration = redisConfiguration;
+    }
 
     @Bean
     public FF4j getFF4j() {
         FF4j ff4j = new FF4j();
 
-        RedisConnection redisConnection = new RedisConnection("localhost", 7001);
+        RedisConnection redisConnection = new RedisConnection(
+                redisConfiguration.url,
+                redisConfiguration.port
+        );
         /*
          * Implementation of each store. Here this is boiler plate as if nothing
          * is specified the inmemory is used. Those are really the one that will
