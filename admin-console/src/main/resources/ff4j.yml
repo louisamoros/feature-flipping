@@ -17,4 +17,4 @@ ff4j:
         class: com.example.flippingutil.MarketFlippingStrategy
         param:
           - name: grantedMarkets
-            value: uk-coke,uk-pepsi
+            value: coke-uk,pepsi-uk
