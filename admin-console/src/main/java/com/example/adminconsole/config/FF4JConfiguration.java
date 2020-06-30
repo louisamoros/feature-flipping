@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FF4JConfiguration {
 
-    private final RedisConfiguration redisConfiguration;
+    private final RedisProperties redisProperties;
 
-    public FF4JConfiguration(RedisConfiguration redisConfiguration) {
-        this.redisConfiguration = redisConfiguration;
+    public FF4JConfiguration(RedisProperties redisProperties) {
+        this.redisProperties = redisProperties;
     }
 
     @Bean
@@ -22,8 +22,10 @@ public class FF4JConfiguration {
         FF4j ff4j = new FF4j();
 
         RedisConnection redisConnection = new RedisConnection(
-                redisConfiguration.url,
-                redisConfiguration.port
+                redisProperties.getHost(),
+                redisProperties.getPort(),
+                redisProperties.getPassword(),
+                redisProperties.isSsl()
         );
         /*
          * Implementation of each store. Here this is boiler plate as if nothing
@@ -40,8 +42,8 @@ public class FF4JConfiguration {
         // When evaluting not existing features, ff4j will create then but disabled
         ff4j.autoCreate(true);
 
-        // To define RBAC access, the application must have a logged user
-        //ff4j.setAuthManager(...);
+        // Look for permissions and all things in Spring Security
+//        ff4j.setAuthorizationsManager(new SpringSecurityAuthorisationManager());
 
         // To define a cacher layer to relax the DB, multiple implementations
         //ff4j.cache([a cache Manager]);

@@ -10,7 +10,7 @@ by selecting the `admin-console/src/main/resources/ff4j.yml` file.
 
 Cool urls to browse:
 ```shell script
-http://localhost:8082/api/ff4j/
-http://localhost:8082/console/
-http://localhost:8082/v2/api-docs
+http://localhost:8888/api/ff4j/
+http://localhost:8888/console/
+http://localhost:8888/v2/api-docs
 ```

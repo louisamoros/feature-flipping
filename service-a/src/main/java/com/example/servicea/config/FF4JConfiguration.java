@@ -5,17 +5,30 @@ import org.ff4j.redis.RedisConnection;
 import org.ff4j.store.EventRepositoryRedis;
 import org.ff4j.store.FeatureStoreRedis;
 import org.ff4j.store.PropertyStoreRedis;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class FF4JConfig {
+@EnableConfigurationProperties(RedisProperties.class)
+public class FF4JConfiguration {
+
+    private final RedisProperties redisProperties;
+
+    public FF4JConfiguration(RedisProperties redisProperties) {
+        this.redisProperties = redisProperties;
+    }
 
     @Bean
     public FF4j getFF4j() {
         FF4j ff4j = new FF4j();
 
-        RedisConnection redisConnection = new RedisConnection("localhost", 7001);
+        RedisConnection redisConnection = new RedisConnection(
+                redisProperties.getHost(),
+                redisProperties.getPort(),
+                redisProperties.getPassword(),
+                redisProperties.isSsl()
+        );
         /*
          * Implementation of each store. Here this is boiler plate as if nothing
          * is specified the inmemory is used. Those are really the one that will
@@ -31,11 +44,7 @@ public class FF4JConfig {
         // When evaluting not existing features, ff4j will create then but disabled
         ff4j.autoCreate(true);
 
-        // To define RBAC access, the application must have a logged user
-        //ff4j.setAuthManager(...);
 
-        // To define a cacher layer to relax the DB, multiple implementations
-        //ff4j.cache([a cache Manager]);
         return ff4j;
     }
 
