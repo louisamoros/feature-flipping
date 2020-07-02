@@ -6,17 +6,17 @@ import org.ff4j.core.FlippingExecutionContext;
 
 interface ApiService {
 
-    @Flip(name = "new-api", alterBean = "new-service-api")
+    @Flip(name = "new-api", alterBean = "new-api-service")
     String whichApi();
 
     @Flip(
             name = "new-api-market",
-            alterBean = "new-service-api",
+            alterBean = "new-api-service",
             contextLocation = ContextLocation.PARAMETER
     )
     String whichApiOnMarket(FlippingExecutionContext context);
 
-    @Flip(name = "new-api-release-date", alterBean = "new-service-api")
+    @Flip(name = "new-api-release-date", alterBean = "new-api-service")
     String whichApiOnReleaseDate();
 
 }

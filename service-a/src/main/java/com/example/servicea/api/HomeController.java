@@ -14,7 +14,7 @@ public class HomeController {
 
     private final ApiService apiService;
 
-    public HomeController(@Qualifier("legacy-service-api") ApiService apiService) {
+    public HomeController(@Qualifier("legacy-api-service") ApiService apiService) {
         this.apiService = apiService;
     }
 
@@ -30,7 +30,7 @@ public class HomeController {
 
     @GetMapping("/hey/market")
     public Payload heyOnMarket(@PathVariable("brand") String brand,
-                       @PathVariable("country") String country) {
+                               @PathVariable("country") String country) {
         FlippingExecutionContext executionContext = new FlippingExecutionContext();
         executionContext.putString(MarketFlippingStrategy.PARAM_NAME_USER_MARKET, brand + "-" + country);
         return new Payload(

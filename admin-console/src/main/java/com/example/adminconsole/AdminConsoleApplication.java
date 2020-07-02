@@ -6,7 +6,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan({
-        "org.ff4j.aop",
         "com.example.adminconsole",
         "com.example.flippingutil"
 })
